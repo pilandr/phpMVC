@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Base\AbstractController;
 use App\Model\Message;
+use Base\View;
 
 class Blog extends AbstractController
 {
@@ -24,7 +25,8 @@ class Blog extends AbstractController
                 }
             });
         }
-        return $this->view->render('Blog\messages.phtml', [
+        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
+        return $this->view->render('Blog\messages.twig', [
             'messages' => $messages,
             'user' => $this->getUser()
         ]);

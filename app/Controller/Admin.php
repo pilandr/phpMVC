@@ -14,6 +14,7 @@ class Admin extends AbstractController
             $this->redirect('/');
         }
         $messageId = (int) $_GET['id'];
+
         Message::deleteMessage($messageId);
         $this->redirect('/blog');
     }

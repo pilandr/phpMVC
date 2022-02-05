@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Model\User as UserModel;
 use Base\AbstractController;
+use Base\View;
 
 class User extends AbstractController
 {
@@ -11,7 +12,8 @@ class User extends AbstractController
         if ($this->getUser()) {
             $this->redirect('/blog/index');
         }
-        return $this->view->render('User/register.phtml');
+        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
+        return $this->view->render('User/register.twig');
     }
 
     public function login(): string
@@ -36,8 +38,8 @@ class User extends AbstractController
         } else {
             $this->view->assign('error', 'Заполните все поля');
         }
-
-        return $this->view->render('User/register.phtml');
+        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
+        return $this->view->render('User/register.twig');
     }
 
     public function register(): string
@@ -96,7 +98,9 @@ class User extends AbstractController
 //        return $this->view->render('User/register.phtml', [
 //            'user' => UserModel::getById((int) $_GET['id'])
 //        ]);
-        return $this->view->render('User/register.phtml');
+
+        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
+        return $this->view->render('User/register.twig');
     }
 
     public function profile(): string
