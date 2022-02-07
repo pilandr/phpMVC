@@ -12,8 +12,7 @@ class User extends AbstractController
         if ($this->getUser()) {
             $this->redirect('/blog/index');
         }
-        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
-        return $this->view->render('User/register.twig');
+        return $this->view->render('User/register');
     }
 
     public function login(): string
@@ -38,8 +37,7 @@ class User extends AbstractController
         } else {
             $this->view->assign('error', 'Заполните все поля');
         }
-        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
-        return $this->view->render('User/register.twig');
+        return $this->view->render('User/register');
     }
 
     public function register(): string
@@ -95,17 +93,12 @@ class User extends AbstractController
             }
         }
 
-//        return $this->view->render('User/register.phtml', [
-//            'user' => UserModel::getById((int) $_GET['id'])
-//        ]);
-
-        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
-        return $this->view->render('User/register.twig');
+        return $this->view->render('User/register');
     }
 
     public function profile(): string
     {
-        return $this->view->render('User/profile.phtml', [
+        return $this->view->render('User/profile', [
             'user' => UserModel::getById((int) $_GET['id'])
         ]);
 

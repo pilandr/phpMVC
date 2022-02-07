@@ -25,8 +25,7 @@ class Blog extends AbstractController
                 }
             });
         }
-        $this->view->setRenderType(View::RENDER_TYPE_TWIG);
-        return $this->view->render('Blog\messages.twig', [
+        return $this->view->render('Blog\messages', [
             'messages' => $messages,
             'user' => $this->getUser()
         ]);
@@ -39,9 +38,6 @@ class Blog extends AbstractController
         }
 
         $text = (string) $_POST['text'];
-//        if (!$text) {
-//            $this->error('Сообщение не может быть пустым');
-//        }
 
         $message = new Message([
             'text' => $text,

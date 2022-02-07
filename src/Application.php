@@ -23,15 +23,11 @@ class Application
             $this->addRoutes();
             $this->initController();
             $this->initAction();
-    //            print_r($this->controller) ;
-    //            echo "<BR>";
-    //            echo $this->actionName;
-    //            echo "<BR>";
-//
-            $view = new View();
+
+            $view = new TwigView();
             $this->controller->setView($view);
             $this->initUser();
-//
+
             $content = $this->controller->{$this->actionName}();
             echo $content;
 

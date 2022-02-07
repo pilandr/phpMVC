@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: localhost    Database: blog
+-- Host: localhost    Database: Blog
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -29,7 +29,7 @@ CREATE TABLE `messages` (
   `author_id` int unsigned NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (2,'привет','2022-01-31 00:46:14',4,''),(3,'rtr','2022-01-31 00:54:05',4,'eb59bed5ee19ff1e308ef978622b6f86bed010b0.jpg'),(4,'norm','2022-01-31 00:54:22',4,'fa5693a2a83a49ae9a9bbcc342fe75ab9460af01.jpg'),(6,'привет всем','2022-01-31 01:21:47',5,'270ecb3e3cdd88f7bd43f9cd57a4934b501345b2.jpg'),(7,'hello all from vasya','2022-01-31 01:29:53',6,'');
+INSERT INTO `messages` VALUES (2,'привет','2022-01-31 00:46:14',4,''),(3,'rtr','2022-01-31 00:54:05',4,'eb59bed5ee19ff1e308ef978622b6f86bed010b0.jpg'),(6,'привет всем','2022-01-31 01:21:47',5,'270ecb3e3cdd88f7bd43f9cd57a4934b501345b2.jpg'),(7,'hello all from vasya','2022-01-31 01:29:53',6,''),(8,'привет петя','2022-02-06 01:52:37',7,'');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_uindex` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'hello','0fde43e53ae058fbb809a8c1a776f86a59eb1df9','2022-01-29 01:55:37','hello@mail.ru'),(2,'hello1','7ff3a42b6975d3085b50490bfcea747db8e1954c','2022-01-29 02:02:15','hello1@mail.ru'),(4,'Андрей','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-01-30 22:21:55','and@mail.ru'),(5,'петя','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-01-31 01:21:18','pet@mail.ru'),(6,'Вася','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-01-31 01:29:25','vas@mail.ru');
+INSERT INTO `users` VALUES (1,'hello','0fde43e53ae058fbb809a8c1a776f86a59eb1df9','2022-01-29 01:55:37','hello@mail.ru'),(2,'hello1','7ff3a42b6975d3085b50490bfcea747db8e1954c','2022-01-29 02:02:15','hello1@mail.ru'),(4,'Андрей','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-01-30 22:21:55','and@mail.ru'),(5,'петя','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-01-31 01:21:18','pet@mail.ru'),(6,'Вася','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-01-31 01:29:25','vas@mail.ru'),(7,'and','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-02-06 00:07:09','hello2@mail.ru'),(8,'Andr','23cacbff2322ff5cef8a3e3d045ff5e46c9e24df','2022-02-07 23:56:53','and1@mail.ru');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-31  1:51:29
+-- Dump completed on 2022-02-07 23:59:39
